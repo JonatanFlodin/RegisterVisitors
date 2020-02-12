@@ -1,0 +1,41 @@
+﻿@page "{visitorId:int?}"
+@model RegisterVisitors.Pages.FormModel
+@{
+    ViewData["Title"] = "Form";
+}
+
+<div class="centered">
+    <div id="welcomeText">
+        <h1 id="welcomeH1">Välkommen till Orango!</h1>
+        <p id="enterFormText">Fyll gärna i formuläret nedan för att ge oss en tydligare bild över vilka som är här och besöker oss under dagen!</p>
+    </div>
+    <form method="post">
+        <input type="hidden" asp-for="Visitor.Id" />
+        <div class="form-group">
+            <label asp-for="Visitor.Name"></label>
+            <input asp-for="Visitor.Name" class="form-control"/>
+
+            <span class="text-danger" asp-validation-for="Visitor.Name"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Visitor.Company"></label>
+            <input asp-for="Visitor.Company" class="form-control"/>
+
+            <span class="text-danger" asp-validation-for="Visitor.Company"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Visitor.Visiting"></label>
+            <input asp-for="Visitor.Visiting" class="form-control"/>
+
+            <span class="text-danger" asp-validation-for="Visitor.Visiting"></span>
+        </div>
+        <div class="form-group">
+            <label>@DateTime.Now.ToString("yyyy/MM/dd")</label>
+        </div>
+        <button id="registerBtn" type="submit">Registrera besök</button>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

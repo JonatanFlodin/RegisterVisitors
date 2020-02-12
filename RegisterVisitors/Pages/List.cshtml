@@ -1,0 +1,45 @@
+﻿@page 
+@model RegisterVisitors.ListModel
+@{
+    ViewData["Title"] = "List";
+}
+
+<h2>Visitors</h2>
+
+<form method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" class="form-control" asp-for="SearchTerm"/>
+            <span class="input-group-btn">
+                <button class="btn btn-default">
+                    <i class="glyphicon glyphicon-search"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+</form>
+
+<table class="table">
+    @foreach(var visitor in Model.Visitors)
+    {
+    <tr>
+        <td>@visitor.Name</td>
+        <td>@visitor.Company</td>
+        <td>@visitor.Visiting</td>
+        <td>
+            <a class="btn btn-lg" asp-page="./Detail" asp-route-visitorId="@visitor.Id">
+                <i class="glyphicon glyphicon-zoom-in"></i>
+            </a>
+            <a class="btn btn-lg" asp-page="./Form" asp-route-visitorId="@visitor.Id">
+                <i class="glyphicon glyphicon-edit"></i>
+            </a>
+        </td>
+    </tr>
+    }
+    
+</table>
+<a asp-page="./Form" class="btn btn-primary">Registrera besök</a>
+
+<div>@Model.Message</div>
+
+

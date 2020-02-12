@@ -1,0 +1,18 @@
+﻿@page "{visitorId:int}"
+@model RegisterVisitors.DetailModel
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h2>@Model.Visitor.Name</h2>
+<div>
+    Id: @Model.Visitor.Id
+</div>
+<div>
+    Company: @Model.Visitor.Company
+</div>
+<div>
+    Visiting: @Model.Visitor.Visiting
+</div>
+
+<a asp-page="./List">Till listan</a>
