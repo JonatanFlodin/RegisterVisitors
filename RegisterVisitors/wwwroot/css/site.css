@@ -64,7 +64,7 @@ body {
 form {
     padding-top: 20px;
     color: #ff7f00;
-    width: 50%;
+    width: 60%;
     display: inline-block;
     font-family: Open Sans, sans-serif;
 }
@@ -73,7 +73,6 @@ form {
     color: #ff7f00;
     font-family: Open Sans, sans-serif;
     margin: 0;
-    overflow: hidden;
     text-align: center;
     position: absolute;
     left: 50%;
@@ -92,6 +91,7 @@ form {
 }
 
 #registerBtn {
+    height: 2.5em;
     margin-top: 20px;
     width: 75%;
 }
@@ -99,4 +99,46 @@ form {
 #backBtn {
     color: #ff7f00;
     margin-top: 50px;
+}
+
+#logoRegDone {
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#logoForm {
+    width: 30%;
+}
+
+#logoListPage {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    width: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+#visitorsCarousel {
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#listViewHeader {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }

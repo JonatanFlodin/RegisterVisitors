@@ -30,8 +30,8 @@ namespace RegisterVisitors
         {
             Message = config["Message"];
 
-            Visitors = visitorData.GetVisitorByName(SearchTerm);
-            //Visitors = visitorData.GetVisitorByDate(DateTime.Now.ToString("yyy/MM/dd"));
+            //Visitors = visitorData.GetVisitorByName(SearchTerm);
+            Visitors = visitorData.GetVisitorByDate(DateTime.Now.ToString("yyyy/MM/dd"));
         }
     }
 }

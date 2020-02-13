@@ -1,41 +1,77 @@
 ﻿@page "{visitorId:int?}"
 @model RegisterVisitors.Pages.FormModel
 @{
-    ViewData["Title"] = "Form";
+    Layout = "";
 }
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - RegisterVisitors</title>
 
-<div class="centered">
-    <div id="welcomeText">
-        <h1 id="welcomeH1">Välkommen till Orango!</h1>
-        <p id="enterFormText">Fyll gärna i formuläret nedan för att ge oss en tydligare bild över vilka som är här och besöker oss under dagen!</p>
-    </div>
-    <form method="post">
-        <input type="hidden" asp-for="Visitor.Id" />
-        <div class="form-group">
-            <label asp-for="Visitor.Name"></label>
-            <input asp-for="Visitor.Name" class="form-control"/>
+        <environment include="Development">
+            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+            <link rel="stylesheet" href="~/css/site.css" />
+            <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+        </environment>
+        <environment exclude="Development">
+            <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+                  asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+                  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+            <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        </environment>
+    </head>
+    <body>
+        <img src="~/images/orango.png" id="logoForm"/>
+        <div class="centered row">
+            <div class="row">
+                <div id="welcomeText" class="col-sm col-md col-lg col-xl">
+                    <h1 id="welcomeH1">Välkommen till Orango!</h1>
+                    <p id="enterFormText">Fyll gärna i formuläret nedan för att ge oss en tydligare bild över vilka som är här och besöker oss under dagen!</p>
+                </div>
+            </div>
+            
+            <form method="post" class="col-sm col-md col-lg col-xl">
+                <input type="hidden" asp-for="Visitor.Id" />
+                <div class="form-group row">
+                    <div class="form-group col-sm col-md col-lg col-xl">
+                        <label asp-for="Visitor.Name"></label>
+                        <input asp-for="Visitor.Name" class="form-control" />
+                    </div>
+                    
 
-            <span class="text-danger" asp-validation-for="Visitor.Name"></span>
+                    <span class="text-danger" asp-validation-for="Visitor.Name"></span>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm col-md col-lg col-xl">
+                        <label asp-for="Visitor.Company"></label>
+                        <input asp-for="Visitor.Company" class="form-control" />
+
+                        <span class="text-danger" asp-validation-for="Visitor.Company"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm col-md col-lg col-xl">
+                        <label asp-for="Visitor.Visiting"></label>
+                        <input asp-for="Visitor.Visiting" class="form-control" />
+
+                        <span class="text-danger" asp-validation-for="Visitor.Visiting"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm col-md col-lg col-xl">
+                        <label>@DateTime.Now.ToString("yyyy/MM/dd")</label>
+                    </div>
+                </div>
+                
+                <button id="registerBtn" type="submit">Registrera besök</button>
+            </form>
         </div>
-        <div class="form-group">
-            <label asp-for="Visitor.Company"></label>
-            <input asp-for="Visitor.Company" class="form-control"/>
 
-            <span class="text-danger" asp-validation-for="Visitor.Company"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Visitor.Visiting"></label>
-            <input asp-for="Visitor.Visiting" class="form-control"/>
+        @section Scripts {
+            <partial name="_ValidationScriptsPartial" />
+        }
+    </body>
+    </html>
 
-            <span class="text-danger" asp-validation-for="Visitor.Visiting"></span>
-        </div>
-        <div class="form-group">
-            <label>@DateTime.Now.ToString("yyyy/MM/dd")</label>
-        </div>
-        <button id="registerBtn" type="submit">Registrera besök</button>
-    </form>
-</div>
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}

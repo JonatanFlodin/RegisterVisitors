@@ -1,15 +1,17 @@
-﻿@page 
+﻿@page
+
 @model RegisterVisitors.ListModel
 @{
     ViewData["Title"] = "List";
 }
-
-<h2>Visitors</h2>
+    <meta http-equiv="refresh" content="300" />
+<!--
+    <h2>Visitors</h2>
 
 <form method="get">
     <div class="form-group">
         <div class="input-group">
-            <input type="search" class="form-control" asp-for="SearchTerm"/>
+            <input type="search" class="form-control" asp-for="SearchTerm" />
             <span class="input-group-btn">
                 <button class="btn btn-default">
                     <i class="glyphicon glyphicon-search"></i>
@@ -36,10 +38,32 @@
         </td>
     </tr>
     }
-    
+
 </table>
+
 <a asp-page="./Form" class="btn btn-primary">Registrera besök</a>
+-->
+<!--<img src="~/images/orango.png" id="logoListPage" />-->
+    <div id="listViewHeader"> 
+        <h1>Besökare på kontoret</h1>
+    </div>
 
-<div>@Model.Message</div>
-
+<div id="visitorsCarousel">
+    <div class="carousel slide" data-ride="carousel" data-interval="5000">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <h3>Våra besökare här idag:</h3>
+            </div>
+            @foreach (var visitor in Model.Visitors)
+            {
+                <div class="item">
+                    <h3>Besökare: @visitor.Name</h3>
+                    <h3>Företag/Organisation: @visitor.Company</h3>
+                    <h3>Besöker: @visitor.Visiting</h3>
+                </div>
+            }
+        </div>
+    </div>
+</div>
 
