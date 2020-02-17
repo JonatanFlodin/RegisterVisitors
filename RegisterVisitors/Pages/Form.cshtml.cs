@@ -55,7 +55,7 @@ namespace RegisterVisitors.Pages
                 visitorData.Add(Visitor);
             }
             visitorData.Commit();
-            return RedirectToPage("./registrationdone"/*, new { visitorId = Visitor.Id }*/);
+            return RedirectToPage("./registrationdone");
         }
     }
 }

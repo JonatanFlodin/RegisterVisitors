@@ -37,27 +37,134 @@ body {
 }
 
 /* Hide/rearrange for smaller screens */
+@media screen and (max-height: 812px) {
+    body {
+        overflow-y: scroll;
+    }
+}
+
 @media screen and (max-width: 767px) {
     /* Hide captions */
     .carousel-caption {
         display: none;
     }
+
+    .listViewHeader {
+        font-size: 2em;
+    }
+
+    .item {
+        width: auto;
+        font-size: 1.5em;
+    }
+    #enterFormText {
+        font-size: 1.1em;
+    }
+
+    #welcomeH1 {
+        font-size: 2.9em;
+    }
+
+    .scaleableText {
+        font-size: 1em;
+    }
+    #registerBtn {
+        font-size: 1em;
+    }
 }
 
-#welcomeText {
+@media screen and (min-width: 768px) {
+    .listViewHeader {
+        font-size: 2.5em;
+    }
+    .item {
+        font-size: 1.7em;
+    }
+    #enterFormText {
+        font-size: 1.2em;
+    }
+
+    #welcomeH1 {
+        font-size: 2.9em;
+    }
+
+    .scaleableText {
+        font-size: 1em;
+    }
+
+    #registerBtn {
+        font-size: 1em;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .listViewHeader {
+        font-size: 3.2em;
+        margin-bottom: 10px;
+    }
+
+    .listViewHeader > p {
+        margin-bottom: 40px;
+    }
+
+    .item {
+        font-size: 2em;
+    }
+    #enterFormText {
+        width: 75%;
+        font-size: 1.3em;
+    }
+
+    #welcomeH1 {
+        font-size: 3.5em;
+    }
+
+    .scaleableText {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .listViewHeader {
+        margin-bottom: 35px;
+    }
+
+    .listViewHeader > p {
+        margin-bottom: 55px;
+    }
+
+    .item {
+        font-size: 2.5em;
+    }
+    #enterFormText {
+        width: 75%;
+        font-size: 1.3em;
+    }
+
+    #welcomeH1 {
+        font-size: 3.8em;
+    }
+
+    .scaleableText {
+        font-size: 1.2em;
+    }
+
+}
+
+.welcomeText {
+    margin: auto;
     text-align: center;
     color: #ff7f00;
     font-family: Open Sans, sans-serif;
 }
 
 #welcomeH1 {
-    font-size: 70px;
     font-family: Open Sans, sans-serif;
 }
 
 #enterFormText {
+    margin: auto;
     padding-top: 20px;
-    font-size: 18px;
     font-family: Open Sans, sans-serif;
 }
 
@@ -93,7 +200,6 @@ form {
 #registerBtn {
     height: 2.5em;
     margin-top: 20px;
-    width: 75%;
 }
 
 #backBtn {
@@ -127,18 +233,19 @@ form {
 }
 
 #visitorsCarousel {
-    font-weight: bold;
     position: absolute;
     left: 50%;
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    width: 50%;
 }
 
-#listViewHeader {
+.listViewHeader {
     position: absolute;
     left: 50%;
     top: 40%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+

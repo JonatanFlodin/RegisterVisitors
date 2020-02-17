@@ -38,31 +38,38 @@
         </td>
     </tr>
     }
-
 </table>
 
 <a asp-page="./Form" class="btn btn-primary">Registrera besök</a>
 -->
 <!--<img src="~/images/orango.png" id="logoListPage" />-->
-    <div id="listViewHeader"> 
-        <h1>Besökare på kontoret</h1>
+   
+<div class="container">
+    <div class="listViewHeader row">
+        <p>Besökare på kontoret</p>
+        
     </div>
+    <div class="row" id="visitorsCarousel">
 
-<div id="visitorsCarousel">
-    <div class="carousel slide" data-ride="carousel" data-interval="5000">
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <h3>Våra besökare här idag:</h3>
-            </div>
-            @foreach (var visitor in Model.Visitors)
-            {
-                <div class="item">
-                    <h3>Besökare: @visitor.Name</h3>
-                    <h3>Företag/Organisation: @visitor.Company</h3>
-                    <h3>Besöker: @visitor.Visiting</h3>
+        <div class="carousel slide row col-xs col-sm col-md col-lg col-xl" data-ride="carousel" data-interval="5000">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active row">
+                    <p>Våra besökare här idag:</p>
                 </div>
-            }
+                @foreach (var visitor in Model.Visitors)
+                {
+                    <div class="item carouselText row">
+                        <div class="col-xs col-sm col-md col-lg col-xl">
+                            <p>Besökare: @visitor.Name</p>
+                            <p>Företag/Organisation: @visitor.Company</p>
+                            <p>Besöker: @visitor.Visiting</p>
+                        </div>
+                        
+                    </div>
+                }
+            </div>
         </div>
     </div>
-</div>
+</div> 
+

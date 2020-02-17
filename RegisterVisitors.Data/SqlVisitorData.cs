@@ -44,10 +44,10 @@ namespace RegisterVisitors.Data
 
         public IEnumerable<Visitor> GetVisitorByDate(string date)
         {
-            var query =  from v in db.Visitors
-                         where (v.Date == date)
-                         orderby v.Name
-                         select v;
+            var query = from v in db.Visitors
+                        where (v.Date == date)
+                        orderby v.Name
+                        select v;
 
             return query;
         }

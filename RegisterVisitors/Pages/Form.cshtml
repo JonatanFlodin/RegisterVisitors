@@ -23,50 +23,61 @@
         </environment>
     </head>
     <body>
-        <img src="~/images/orango.png" id="logoForm"/>
-        <div class="centered row">
-            <div class="row">
-                <div id="welcomeText" class="col-sm col-md col-lg col-xl">
-                    <h1 id="welcomeH1">Välkommen till Orango!</h1>
-                    <p id="enterFormText">Fyll gärna i formuläret nedan för att ge oss en tydligare bild över vilka som är här och besöker oss under dagen!</p>
+        <div class="container">
+            <div class="row" style="margin-bottom: 20px">
+                <div class="col-sm col-md col-lg col-xl">
+                    <img src="~/images/orango.png" id="logoForm" />
                 </div>
+            </div>    
+            <div class="centered row">
+                <div class="row">
+                    <div id="" class="col-sm col-md col-lg col-xl welcomeText">
+                        <h1 id="welcomeH1">Välkommen till Orango!</h1>
+                        <p id="enterFormText">Fyll gärna i formuläret nedan för att ge oss en tydligare bild över vilka som är här och besöker oss under dagen!</p>
+                    </div>
+                </div>
+
+                <form method="post" class="col-sm col-md col-lg col-xl">
+                    <input type="hidden" asp-for="Visitor.Id" />
+                    <div class="form-group row">
+                        <div class="form-group col-sm col-md col-lg col-xl scaleableText">
+                            <label asp-for="Visitor.Name"></label>
+                            <input asp-for="Visitor.Name" class="form-control" />
+                        </div>
+
+
+                        <span class="text-danger" asp-validation-for="Visitor.Name"></span>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm col-md col-lg col-xl">
+                            <label asp-for="Visitor.Company" class="scaleableText"></label>
+                            <input asp-for="Visitor.Company" class="form-control" />
+
+                            <span class="text-danger" asp-validation-for="Visitor.Company"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm col-md col-lg col-xl">
+                            <label asp-for="Visitor.Visiting" class="scaleableText"></label>
+                            <input asp-for="Visitor.Visiting" class="form-control" />
+
+                            <span class="text-danger" asp-validation-for="Visitor.Visiting"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm col-md col-lg col-xl">
+                            <label>@DateTime.Now.ToString("yyyy/MM/dd")</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm col-md col-lg col-xl">
+                            <button id="registerBtn" type="submit">Registrera besök</button>
+                        </div>
+
+                    </div>
+
+                </form>
             </div>
-            
-            <form method="post" class="col-sm col-md col-lg col-xl">
-                <input type="hidden" asp-for="Visitor.Id" />
-                <div class="form-group row">
-                    <div class="form-group col-sm col-md col-lg col-xl">
-                        <label asp-for="Visitor.Name"></label>
-                        <input asp-for="Visitor.Name" class="form-control" />
-                    </div>
-                    
-
-                    <span class="text-danger" asp-validation-for="Visitor.Name"></span>
-                </div>
-                <div class="row">
-                    <div class="form-group col-sm col-md col-lg col-xl">
-                        <label asp-for="Visitor.Company"></label>
-                        <input asp-for="Visitor.Company" class="form-control" />
-
-                        <span class="text-danger" asp-validation-for="Visitor.Company"></span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col-sm col-md col-lg col-xl">
-                        <label asp-for="Visitor.Visiting"></label>
-                        <input asp-for="Visitor.Visiting" class="form-control" />
-
-                        <span class="text-danger" asp-validation-for="Visitor.Visiting"></span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col-sm col-md col-lg col-xl">
-                        <label>@DateTime.Now.ToString("yyyy/MM/dd")</label>
-                    </div>
-                </div>
-                
-                <button id="registerBtn" type="submit">Registrera besök</button>
-            </form>
         </div>
 
         @section Scripts {
