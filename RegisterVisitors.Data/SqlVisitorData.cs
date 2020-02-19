@@ -17,7 +17,6 @@ namespace RegisterVisitors.Data
 
         public Visitor Add(Visitor newVisitor)
         {
-            newVisitor.Date = DateTime.Now.ToString("yyyy/MM/dd");
             db.Add(newVisitor);
             return newVisitor;
         }

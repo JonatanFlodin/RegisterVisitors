@@ -7,6 +7,10 @@ namespace RegisterVisitors.Core
 {
     public class Visitor
     {
+        public Visitor()
+        {
+            Date = DateTime.Now.ToString("yyyy/MM/dd");
+        }
         public int Id { get; set; }
 
         public string Date { get; set; }
